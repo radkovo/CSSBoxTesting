@@ -22,7 +22,7 @@ public class ReferenceTest
     public void compareWithReference() throws MalformedURLException
     { 
         ReferenceResults ref = new ReferenceResults();
-        URL url = new URL("file://" + System.getProperty("user.home") + "/tmp/css-test-built/css21_dev/html4/");
+        URL url = new URL("file://" + System.getProperty("user.home") + "/tmp/CSSBoxTesting/baseline/nightly-unstable/html4/");
         TestBatch tester = new TestBatch(url);
         
         tester.runTests();
