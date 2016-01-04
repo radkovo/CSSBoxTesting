@@ -9,9 +9,9 @@
 	<appender name="cssbox" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- <encoder> <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} 
 			- %msg%n</pattern> </encoder> -->
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%-4relative %-5level %-25logger{1} - %msg%n</Pattern>
-		</layout>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%-4relative %-5level %-25logger{1} - %msg%n</pattern>
+		</encoder>
 	</appender>
 
 	<logger name="org.fit.cssbox" additivity="false">
@@ -39,15 +39,15 @@
 			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
 			<MaxFileSize>1024kB</MaxFileSize>
 		</triggeringPolicy>
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%-4relative %-5level %logger{35} - %msg%n</Pattern>
-		</layout>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%-4relative %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
 	</appender>
 
 	<appender name="jstyleparser" class="ch.qos.logback.core.ConsoleAppender">
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%-4relative %-5level %logger{35} - %msg%n</Pattern>
-		</layout>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%-4relative %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
 	</appender>
 	
 	<logger name="test" additivity="false">
@@ -82,7 +82,6 @@
 
 
 	<root>
-		<priority value="warn" />
 		<appender-ref ref="cssbox" />
 	</root>
 
