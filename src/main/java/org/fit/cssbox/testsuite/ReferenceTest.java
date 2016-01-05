@@ -3,7 +3,7 @@
  *
  * Created on 4. 1. 2016, 11:06:09 by burgetr
  */
-package org.fit.cssbox.test;
+package org.fit.cssbox.testsuite;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -64,6 +64,8 @@ public class ReferenceTest
         System.out.println("Total " + errorcnt + " regressions");
         System.out.println("Total " + progcnt + " progressions");
 
+        tester.saveResults("results.csv");
+        System.out.println("New reference results saved to results.csv");
     }
     
     public static void main(String[] args)
