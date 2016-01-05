@@ -1,85 +1,55 @@
 <configuration>
 
-	<!--
-		TESTING CSSBox logback configuration.  
-	 -->
-
-	<!-- CSSBox output to stdout -->
-
 	<appender name="cssbox" class="ch.qos.logback.core.ConsoleAppender">
-		<!-- <encoder> <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} 
-			- %msg%n</pattern> </encoder> -->
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<pattern>%-4relative %-5level %-25logger{1} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
-	<logger name="org.fit.cssbox" additivity="false">
+	<logger name="org.fit.cssbox.layout" additivity="false">
 		<level value="error" />
 		<appender-ref ref="cssbox" />
 	</logger>
 
 	<logger name="org.fit.cssbox.test" additivity="false">
+		<level value="info" />
+		<appender-ref ref="cssbox" />
+	</logger>
+
+	<logger name="org.fit.cssbox.testsuite" additivity="false">
+		<level value="info" />
+		<appender-ref ref="cssbox" />
+	</logger>
+
+	<logger name="test" additivity="false">
 		<level value="error" />
 		<appender-ref ref="cssbox" />
 	</logger>
 
-
-	<!-- jStyleParser output to stdout (by default) or to a log file -->
-
-	<appender name="jstyleparser_file"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>/tmp/jstyleparser.log</File>
-		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-			<FileNamePattern>/tmp/jstyleparser.%i.log.zip</FileNamePattern>
-			<MinIndex>1</MinIndex>
-			<MaxIndex>3</MaxIndex>
-		</rollingPolicy>
-		<triggeringPolicy
-			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-			<MaxFileSize>1024kB</MaxFileSize>
-		</triggeringPolicy>
-		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>%-4relative %-5level %logger{35} - %msg%n</pattern>
-		</encoder>
-	</appender>
-
-	<appender name="jstyleparser" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>%-4relative %-5level %logger{35} - %msg%n</pattern>
-		</encoder>
-	</appender>
-	
-	<logger name="test" additivity="false">
-		<level value="error" />
-		<appender-ref ref="jstyleparser" />
-	</logger>
-
 	<logger name="cz.vutbr.web.css" additivity="false">
 		<level value="error" />
-		<appender-ref ref="jstyleparser" />
+		<appender-ref ref="cssbox" />
 	</logger>
 
 	<logger name="cz.vutbr.web.csskit" additivity="false">
 		<level value="error" />
-		<appender-ref ref="jstyleparser" />
+		<appender-ref ref="cssbox" />
 	</logger>
 
 	<logger name="cz.vutbr.web.csskit.antlr" additivity="false">
 		<level value="error" />
-		<appender-ref ref="jstyleparser" />
+		<appender-ref ref="cssbox" />
 	</logger>
 
 	<logger name="cz.vutbr.web.domassign" additivity="false">
 		<level value="error" />
-		<appender-ref ref="jstyleparser" />
+		<appender-ref ref="cssbox" />
 	</logger>
 
 	<logger name="cz.vutbr.web.domassign.DeclarationTransformer" additivity="false">
 		<level value="error" />
-		<appender-ref ref="jstyleparser" />
+		<appender-ref ref="cssbox" />
 	</logger>
-
 
 	<root>
 		<appender-ref ref="cssbox" />

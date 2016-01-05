@@ -32,6 +32,22 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<descriptors>
+						<descriptor>/src/main/assembly/dist.xml</descriptor>
+					</descriptors>
+					<archive>
+						<manifest>
+							<mainClass>org.fit.cssbox.testsuite.ReferenceTest</mainClass>
+						</manifest>
+					</archive>
+					<finalName>ReferenceTest</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

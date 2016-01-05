@@ -9,8 +9,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 
-import org.fit.cssbox.test.ReferenceResults;
-import org.fit.cssbox.test.TestBatch;
+import org.fit.cssbox.testing.ReferenceResults;
+import org.fit.cssbox.testing.TestBatch;
 
 /**
  * 
