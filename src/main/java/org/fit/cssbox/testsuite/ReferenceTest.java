@@ -40,21 +40,21 @@ public class ReferenceTest
                 System.out.println(name + " : execution failed");
                 errorcnt++;
             }
-            if (val > refval)
+            if (val - refval > ReferenceResults.COMPARISON_THRESHOLD)
             {
                 System.out.println(name + " : regression found (" + val + " > " + refval + ")");
                 errorcnt++;
             }
         }
         
-        System.out.println("Regressions:");
+        System.out.println("Progressions:");
         int progcnt = 0;
         for (Map.Entry<String, Float> item : results.entrySet())
         {
             String name = item.getKey();
             float val = item.getValue();
             float refval = ref.get(name);
-            if (val >= 0.0f && val < refval)
+            if (val >= 0.0f && val - refval < -ReferenceResults.COMPARISON_THRESHOLD)
             {
                 System.out.println(name + " : progression found (" + val + " < " + refval + ")");
                 progcnt++;

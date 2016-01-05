@@ -2,7 +2,8 @@
 
 	<appender name="cssbox" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>%-4relative %-5level %-25logger{1} - %msg%n</pattern>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<!-- <pattern>%-4relative %-5level %-25logger{1} - %msg%n</pattern>  -->
 		</encoder>
 	</appender>
 
@@ -11,7 +12,7 @@
 		<appender-ref ref="cssbox" />
 	</logger>
 
-	<logger name="org.fit.cssbox.test" additivity="false">
+	<logger name="org.fit.cssbox.testing" additivity="false">
 		<level value="info" />
 		<appender-ref ref="cssbox" />
 	</logger>
