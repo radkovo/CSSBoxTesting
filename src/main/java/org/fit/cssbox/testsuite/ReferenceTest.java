@@ -19,7 +19,7 @@ import org.fit.cssbox.testing.TestBatch;
 public class ReferenceTest
 {
 
-    public void compareWithReference() throws MalformedURLException
+    public int compareWithReference() throws MalformedURLException
     { 
         ReferenceResults ref = new ReferenceResults();
         URL url = new URL("file://" + System.getProperty("user.home") + "/tmp/CSSBoxTesting/baseline/nightly-unstable/html4/");
@@ -66,6 +66,8 @@ public class ReferenceTest
 
         tester.saveResults("results.csv");
         System.out.println("New reference results saved to results.csv");
+        
+        return errorcnt;
     }
     
     public static void main(String[] args)
