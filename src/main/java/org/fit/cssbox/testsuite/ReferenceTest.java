@@ -18,12 +18,13 @@ import org.fit.cssbox.testing.TestBatch;
  */
 public class ReferenceTest
 {
+    private static final int THREADS = 4;
 
     public int compareWithReference() throws MalformedURLException
     { 
         ReferenceResults ref = new ReferenceResults();
         URL url = new URL("file://" + System.getProperty("user.home") + "/tmp/CSSBoxTesting/baseline/nightly-unstable/html4/");
-        TestBatch tester = new TestBatch(url);
+        TestBatch tester = new TestBatch(url, THREADS);
         
         tester.runTests();
         Map<String, Float> results = tester.getResults();
