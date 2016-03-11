@@ -26,6 +26,12 @@ public class ReferenceTest
         URL url = new URL("file://" + System.getProperty("user.home") + "/tmp/CSSBoxTesting/baseline/nightly-unstable/html4/");
         TestBatch tester = new TestBatch(url, THREADS);
         
+        if (tester.getTestCount() == 0)
+        {
+            System.out.println("No tests found, giving up.");
+            return 0;
+        }
+        
         tester.runTests();
         Map<String, Float> results = tester.getResults();
 
