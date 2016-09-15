@@ -7,6 +7,7 @@ package org.fit.cssbox.testsuite;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Date;
 import java.util.Map;
 
 import org.fit.cssbox.testing.ReferenceResults;
@@ -22,6 +23,7 @@ public class ReferenceTest
 
     public int compareWithReference() throws MalformedURLException
     { 
+        Date start = new Date();
         ReferenceResults ref = new ReferenceResults();
         URL url = new URL("file://" + System.getProperty("user.home") + "/tmp/CSSBoxTesting/baseline/nightly-unstable/html4/");
         TestBatch tester = new TestBatch(url, THREADS);
@@ -73,6 +75,9 @@ public class ReferenceTest
 
         tester.saveResults("results.csv");
         System.out.println("New reference results saved to results.csv");
+        
+        Date end = new Date();
+        System.out.println("Run time: " + (end.getTime() - start.getTime()));
         
         return errorcnt;
     }
